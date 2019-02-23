@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import StickyHeader from './StickyHeader';
+import Article from './Article';
 import './styles/App.css';
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <StickyHeader/>
+        <Article/>
         {/*<header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
