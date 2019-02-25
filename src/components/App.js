@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      articleData: [],
+      articleData: [""],
       articleURLS: [
         "https://raw.githubusercontent.com/bbc/news-coding-test-dataset/master/data/article-1.json",
         "https://raw.githubusercontent.com/bbc/news-coding-test-dataset/master/data/article-2.json",
@@ -16,7 +16,8 @@ class App extends Component {
         "https://raw.githubusercontent.com/bbc/news-coding-test-dataset/master/data/article-4.json",
         "https://raw.githubusercontent.com/bbc/news-coding-test-dataset/master/data/article-5.json"
       ],
-      randomArticleUrls: []
+      randomArticleUrls: [],
+      currentArticle: 0
     };
   }
 
@@ -38,6 +39,7 @@ class App extends Component {
     .then(([res1, res2, res3, res4, res5]) => Promise.all([res1.json(), res2.json(), res3.json(), res4.json(), res5.json()]))
     .then(([data1, data2, data3, data4, data5]) => {
         this.setState({articleData:[data1, data2, data3, data4, data5]});
+        console.log(this.state.articleData[0].title);
     })
     .catch((error) => {
       console.log(error)
@@ -49,8 +51,7 @@ class App extends Component {
     return (
       <div className="App">
         <StickyHeader/>
-        <Article/>
-        <Ranker/>
+        <Article articleData={this.state.articleData} currentArticle={this.state.currentArticle}/>
       </div>
     );
   }
