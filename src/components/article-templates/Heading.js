@@ -1,9 +1,9 @@
 import React from 'react';
 import './../styles/article-template-styles/Heading.css';
 
-const Heading = () => {
+const Heading = ({text}) => {
   return (
-      <h2>I am the static heading template component of an article</h2>
+      <h2>{text}</h2>
   )
 }
 

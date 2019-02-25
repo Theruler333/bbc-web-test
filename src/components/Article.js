@@ -10,16 +10,17 @@ class Article extends React.Component {
     const articleData = this.props.articleData;
     const currentArticle = this.props.currentArticle;
     console.log(articleData);
+    // Maps all the fields for the current article selected from the navigator
     let articleContents = (articleData[0] !== "")
     ? articleData[currentArticle].body.map((articleItem, index) => {
       if (articleItem.type === "heading") {
-        return(<Heading/>)
+        return(<Heading text={articleItem.model.text}/>)
       }
       else if (articleItem.type === "image") {
-        return(<Image/>)
+        return(<Image url={articleItem.model.url} alt={articleItem.model.altText}/>)
       }
       else if (articleItem.type === "paragraph") {
-        return(<Paragraph/>)
+        return(<Paragraph text={articleItem.model.text}/>)
       }
       else if (articleItem.type === "list") {
         return(<List/>)

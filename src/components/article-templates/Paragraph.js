@@ -1,9 +1,9 @@
 import React from 'react';
 import './../styles/article-template-styles/Paragraph.css';
 
-const Paragraph = () => {
+const Paragraph = ({text}) => {
   return (
-      <p>I am the static paragraph template component of an article</p>
+      <p>{text}</p>
   )
 }
 
