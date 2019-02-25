@@ -7,6 +7,7 @@ import './styles/App.css';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.handleArticleNav = this.handleArticleNav.bind(this);
     this.state = {
       articleData: [""],
       articleURLS: [
@@ -19,6 +20,10 @@ class App extends Component {
       randomArticleUrls: [],
       currentArticle: 0
     };
+  }
+  handleArticleNav(e) {
+    console.log(this.state.currentArticle);
+    this.setState({ currentArticle: this.state.currentArticle + e });
   }
 
   componentDidMount() {
@@ -39,7 +44,6 @@ class App extends Component {
     .then(([res1, res2, res3, res4, res5]) => Promise.all([res1.json(), res2.json(), res3.json(), res4.json(), res5.json()]))
     .then(([data1, data2, data3, data4, data5]) => {
         this.setState({articleData:[data1, data2, data3, data4, data5]});
-        console.log(this.state.articleData[0].title);
     })
     .catch((error) => {
       console.log(error)
@@ -47,10 +51,22 @@ class App extends Component {
     });
   }
 
+  // NextArticle = () => {
+  //   this.setState({ currentArticle: this.state.clicks + 1 });
+  // }
+  //
+  // PrevArticle = () => {
+  //   this.setState({ currentArticle: this.state.clicks - 1 });
+  // }
+
   render() {
     return (
       <div className="App">
-        <StickyHeader/>
+        <StickyHeader
+        handleArticleNav={this.handleArticleNav}
+        currentArticle={this.state.currentArticle}
+        amountOfArticles={this.state.articleData.length}
+        />
         <Article articleData={this.state.articleData} currentArticle={this.state.currentArticle}/>
       </div>
     );

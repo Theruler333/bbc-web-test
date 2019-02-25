@@ -3,11 +3,14 @@ import ArticleNavigator from './ArticleNavigator';
 import logo from './logo.svg';
 import './styles/StickyHeader.css';
 
-const StickyHeader = () => {
+const StickyHeader = ({handleArticleNav, currentArticle, amountOfArticles}) => {
   return (
-    <header className="App-header" aria-label="Peachey News">
+    <header className="Header" aria-label="Peachey News">
       <img src={logo} className="App-logo" alt="logo" />
-      <ArticleNavigator/>
+      <ArticleNavigator handleArticleNav={handleArticleNav}
+      currentArticle={currentArticle}
+      amountOfArticles={amountOfArticles}
+      />
     </header>
   )
 }
