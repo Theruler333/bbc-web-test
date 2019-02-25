@@ -1,0 +1,10 @@
+nav button {
+  cursor: pointer;
+  width: 80px;
+  border: none;
+  background: #b9024f;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}

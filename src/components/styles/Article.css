@@ -1,0 +1,51 @@
+article {
+  max-width: 1170px;
+  margin: 0 auto;
+  background-image: -webkit-gradient(linear,0 0,0 1085.125,from(#e9e9e9),color-stop(1,#f2f2f2),color-stop(1,lightgray),color-stop(1,transparent),to(transparent));
+  background-image: -webkit-linear-gradient(#e9e9e9,#f2f2f2 100%,lightgray 100%,transparent 100%,transparent);
+  background-image: -moz-linear-gradient(#e9e9e9,#f2f2f2 100%,lightgray 100%,transparent 100%,transparent);
+  background-image: -o-linear-gradient(#e9e9e9,#f2f2f2 100%,lightgray 100%,transparent 100%,transparent);
+  background-image: linear-gradient(#e9e9e9,#f2f2f2 100%,lightgray 100%,transparent 100%,transparent);
+  padding: 120px 50px 50px 50px;
+  /* Prefixes for different browser support */
+  -webkit-animation: fadein 3s;
+     -moz-animation: fadein 3s;
+      -ms-animation: fadein 3s;
+       -o-animation: fadein 3s;
+          animation: fadein 3s;
+}
+
+article h1 {
+  color: #b9024f;
+}
+
+/* Animations */
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Prefix for older IE versions */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Prefix for Safari, Chrome and Opera */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Prefix for IE support */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Prefix for older versions of opera*/
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
