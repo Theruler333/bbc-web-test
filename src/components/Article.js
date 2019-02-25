@@ -23,7 +23,7 @@ class Article extends React.Component {
         return(<Paragraph text={articleItem.model.text}/>)
       }
       else if (articleItem.type === "list") {
-        return(<List/>)
+        return(<List type={articleItem.model.type} items={articleItem.model.items}/>)
       }
       else {
         return(<p>This isn't a supported field</p>)

@@ -1,18 +1,29 @@
 import React from 'react';
 import './../styles/article-template-styles/List.css';
 
-const List = () => {
-  return (
-      <div role="placeholder">
-        I am the static list template component of an article
-        <ul>
-          <li>Unordered list</li>
-        </ul>
-        <ol>
-          <li>Ordered list</li>
-        </ol>
-      </div>
-  )
+const List = ({type, items}) => {
+  console.log(items);
+  let listContents = items.map((listItem, index) => {
+    return(<li>listItem</li>)
+  })
+  if (type === "unordered") {
+    return (
+        <div>
+          <ul>
+            {listContents}
+          </ul>
+        </div>
+    )
+  }
+  else if (type === "ordered") {
+    return (
+        <div>
+          <ol>
+            {listContents}
+          </ol>
+        </div>
+    )
+  }
 }
 
 export default List;
