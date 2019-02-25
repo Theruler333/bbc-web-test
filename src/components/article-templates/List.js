@@ -3,7 +3,7 @@ import './../styles/article-template-styles/List.css';
 
 const List = ({type, items}) => {
   console.log(items);
-  let listContents = items.map((listItem, index) => {
+  let listContents = items.map((listItem) => {
     return(<li>listItem</li>)
   })
   if (type === "unordered") {
