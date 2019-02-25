@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Heading from './article-templates/Heading';
 import Image from './article-templates/Image';
 import Paragraph from './article-templates/Paragraph';
 import List from './article-templates/List';
 import './styles/Article.css';
 
-class Article extends React.Component {
+class Article extends Component {
   render() {
     const articleData = this.props.articleData;
     const currentArticle = this.props.currentArticle;
