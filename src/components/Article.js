@@ -9,7 +9,6 @@ class Article extends Component {
   render() {
     const articleData = this.props.articleData;
     const currentArticle = this.props.currentArticle;
-    console.log(articleData);
     // Maps all the fields for the current article selected from the navigator
     let articleContents = (articleData[0] !== "")
     ? articleData[currentArticle].body.map((articleItem, index) => {
