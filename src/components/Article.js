@@ -14,16 +14,16 @@ class Article extends Component {
     let articleContents = (articleData[0] !== "")
     ? articleData[currentArticle].body.map((articleItem, index) => {
       if (articleItem.type === "heading") {
-        return(<Heading text={articleItem.model.text}/>)
+        return(<Heading key={index} text={articleItem.model.text} />)
       }
       else if (articleItem.type === "image") {
-        return(<Image url={articleItem.model.url} alt={articleItem.model.altText}/>)
+        return(<Image key={index} url={articleItem.model.url} alt={articleItem.model.altText}/>)
       }
       else if (articleItem.type === "paragraph") {
-        return(<Paragraph text={articleItem.model.text}/>)
+        return(<Paragraph key={index} text={articleItem.model.text}/>)
       }
       else if (articleItem.type === "list") {
-        return(<List type={articleItem.model.type} items={articleItem.model.items}/>)
+        return(<List key={index} type={articleItem.model.type} items={articleItem.model.items}/>)
       }
       else {
         return(<p>This isn't a supported field</p>)
